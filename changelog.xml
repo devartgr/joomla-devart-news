@@ -4,6 +4,29 @@
     <changelog>
         <element>com_devartnews</element>
         <type>component</type>
+        <version>1.0.1</version>
+
+        <fix>
+            <item>Fixed article selector visibility in widget Data settings</item>
+            <item>Fixed Selected Articles picker incorrectly appearing for non selected article source modes</item>
+            <item>Fixed administrator widget configuration workflow inconsistency in source-specific field visibility</item>
+        </fix>
+
+        <change>
+            <item>Improved administrator widget Data tab source-dependent field behavior</item>
+            <item>Improved configuration workflow consistency for widget article source selection</item>
+        </change>
+
+        <note>
+            <item>Hotfix maintenance release</item>
+            <item>Recommended update for all DevArt News v1.0.0 installations</item>
+            <item>No frontend rendering, cache, template or module behavior changes in this release</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>com_devartnews</element>
+        <type>component</type>
         <version>1.0.0</version>
 
         <addition>
