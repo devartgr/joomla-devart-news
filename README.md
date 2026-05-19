@@ -4,7 +4,7 @@ Professional news widgets package for Joomla 6, designed for editorial, magazine
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.2%2B-green)
-![Release](https://img.shields.io/badge/Version-1.0.0-orange)
+![Release](https://img.shields.io/badge/Version-1.0.1-orange)
 ![License](https://img.shields.io/badge/License-GPLv3-red)
 
 ---
@@ -107,6 +107,7 @@ Features:
 - Global typography controls
 - Dashboard production cards
 - ACL permissions support
+- Selected article picker with search and pagination
 
 ---
 
@@ -238,7 +239,22 @@ Not supported:
 
 ## Current Version
 
-1.0.0
+1.0.1
+
+---
+
+## Changelog 1.0.1
+
+### Fixed
+
+- Fixed article selector visibility in widget Data settings
+- Fixed Selected Articles picker incorrectly appearing for non-selected article source modes
+- Fixed administrator widget configuration workflow inconsistency in source-specific field visibility
+
+### Improved
+
+- Improved administrator widget Data tab source-dependent field behavior
+- Improved configuration workflow consistency for widget article source selection
 
 ---
 
@@ -249,11 +265,11 @@ Not supported:
 - News Cards template
 - Overlay Cards template
 - Compact List template
-- Article query caching
-- Thumbnail caching
-- Widget duplication
-- Import / Export
-- Global typography controls
+- article query caching
+- thumbnail caching
+- widget duplication
+- import / export
+- global typography controls
 - ACL permissions
 - responsive frontend rendering
 - dashboard admin interface
@@ -303,7 +319,7 @@ https://github.com/devartgr/joomla-devart-news
 
 This software is provided "as is", without warranty of any kind.
 
-DevArt shall not be liable for data loss, downtime, rendering issues, cache conflicts, or production issues resulting from use or misuse.
+DevArt shall not be liable for data loss, downtime, rendering issues, cache conflicts, production failures, or issues resulting from use or misuse.
 
 Always test in staging before production deployment.
 
