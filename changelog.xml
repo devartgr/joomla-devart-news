@@ -13,19 +13,23 @@
 
         <fix>
             <item>Fixed card hover effect setting persistence during widget save operations</item>
+            <item>Fixed thumbnail cache lifetime cleanup so expired thumbnails are removed safely over time</item>
+            <item>Fixed manual thumbnail cache clearing to correctly detect generated thumbnail files</item>
         </fix>
 
         <change>
             <item>Improved publication timestamp visibility for editorial and news websites</item>
             <item>Improved frontend card interaction with lightweight CSS-only hover animations</item>
+            <item>Improved thumbnail cache housekeeping for high-traffic and content-heavy websites</item>
             <item>Maintained cache-friendly and production-safe rendering architecture</item>
         </change>
 
         <note>
-            <item>Maintenance release focused on editorial usability improvements</item>
+            <item>Maintenance release focused on editorial usability and cache housekeeping improvements</item>
             <item>Recommended update for all DevArt News installations</item>
             <item>No database schema changes introduced</item>
-            <item>No query, cache or frontend rendering architecture changes in this release</item>
+            <item>No article query or frontend rendering architecture changes in this release</item>
+            <item>Thumbnail cleanup is performed safely and gradually to avoid heavy filesystem operations on high-traffic websites</item>
         </note>
     </changelog>
 
