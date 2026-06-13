@@ -4,16 +4,16 @@ Professional news widgets package for Joomla 6, designed for editorial, magazine
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.2%2B-green)
-![Release](https://img.shields.io/badge/Version-1.0.1-orange)
+![Release](https://img.shields.io/badge/Version-1.0.2-orange)
 ![License](https://img.shields.io/badge/License-GPLv3-red)
 
 ---
 
 ## Overview
 
-DevArt News is a modern Joomla 6 native news widgets package built for editorial websites, magazines, portals, and high-traffic content environments.
+DevArt News is a modern Joomla 6 native news widgets package built for editorial websites, magazines, newspapers, news portals, and high-traffic content environments.
 
-It provides lightweight, cache-friendly article rendering with multiple frontend templates, advanced filtering, smart image handling, and production-safe performance.
+It provides lightweight, cache-friendly article rendering with multiple frontend templates, advanced filtering, publication metadata support, smart image handling, and production-safe performance.
 
 Designed specifically for Joomla 6 with modern architecture, strict typing, and zero legacy baggage.
 
@@ -32,8 +32,9 @@ Included templates:
 Use cases:
 
 - homepage news blocks
-- latest news sections
-- sidebar widgets
+- breaking news sections
+- latest news widgets
+- sidebar news modules
 - related article blocks
 - category mini sections
 - editorial landing pages
@@ -63,6 +64,32 @@ Filtering options:
 
 ---
 
+### Publication Metadata
+
+Display important article information including:
+
+- publication date
+- publication time
+- author
+- category
+- read more links
+
+Example format:
+
+```text
+13/06/2026 15:43
+```
+
+Ideal for:
+
+- news portals
+- magazines
+- newspapers
+- editorial websites
+- live content environments
+
+---
+
 ### Smart Image Handling
 
 Automatic image discovery:
@@ -89,11 +116,12 @@ Features:
 
 - responsive layouts
 - mobile-friendly rendering
-- masonry support (where applicable)
 - lightweight CSS
-- no heavy frontend frameworks
 - minimal JavaScript
 - cache-friendly output
+- Cloudflare-friendly architecture
+- Joomla Page Cache compatibility
+- production-safe rendering
 
 ---
 
@@ -105,7 +133,7 @@ Features:
 - Import / Export widgets
 - Template settings
 - Global typography controls
-- Dashboard production cards
+- Dashboard management interface
 - ACL permissions support
 - Selected article picker with search and pagination
 
@@ -129,6 +157,7 @@ Features:
 - optional category badge
 - optional metadata
 - optional author/date
+- optional publication timestamp
 - intro line controls
 - optional read more
 
@@ -152,15 +181,19 @@ This package installs:
 
 ## Installation
 
-1. Download latest release
+1. Download the latest release
 2. Open:
 
-`System → Extensions → Install`
+```text
+System → Extensions → Install
+```
 
-3. Upload package ZIP
+3. Upload the package ZIP
 4. Open:
 
-`Components → DevArt News`
+```text
+Components → DevArt News
+```
 
 5. Create widgets
 6. Publish module instances
@@ -173,11 +206,15 @@ Supports Joomla native updates via GitHub.
 
 Update location:
 
-`System → Extensions → Update`
+```text
+System → Extensions → Update
+```
 
 Update server:
 
-`https://raw.githubusercontent.com/devartgr/joomla-devart-news/main/update.xml`
+```text
+https://raw.githubusercontent.com/devartgr/joomla-devart-news/main/update.xml
+```
 
 ---
 
@@ -194,14 +231,15 @@ Features:
 - Joomla Page Cache compatibility
 - Cloudflare-friendly output
 - CDN-friendly architecture
-- safe repeated rendering
 - widget-level cache isolation
+- safe repeated rendering
 
 Suitable for:
 
-- editorial sites
+- editorial websites
+- newspapers
+- magazines
 - news portals
-- magazine websites
 - content-heavy Joomla installations
 
 ---
@@ -209,7 +247,7 @@ Suitable for:
 ## Security Highlights
 
 - Joomla ACL support
-- CSRF-safe admin actions
+- CSRF-safe administrator actions
 - Joomla query builder protection
 - XSS-safe rendering
 - strict input validation
@@ -239,22 +277,22 @@ Not supported:
 
 ## Current Version
 
-1.0.1
+**1.0.2**
 
 ---
 
-## Changelog 1.0.1
+## Changelog 1.0.2
 
-### Fixed
+### Added
 
-- Fixed article selector visibility in widget Data settings
-- Fixed Selected Articles picker incorrectly appearing for non-selected article source modes
-- Fixed administrator widget configuration workflow inconsistency in source-specific field visibility
+- Added publication date and time display support
+- Added newsroom-friendly timestamp formatting
 
 ### Improved
 
-- Improved administrator widget Data tab source-dependent field behavior
-- Improved configuration workflow consistency for widget article source selection
+- Improved publication metadata visibility across frontend templates
+- Improved consistency of article timestamp rendering
+- Enhanced editorial workflow support for news websites
 
 ---
 
@@ -272,7 +310,7 @@ Not supported:
 - global typography controls
 - ACL permissions
 - responsive frontend rendering
-- dashboard admin interface
+- dashboard administration interface
 - mobile optimized layouts
 
 ---
@@ -290,24 +328,26 @@ Frontend:
 
 Infrastructure:
 
-- Joomla Page Cache
 - Cloudflare CDN
-- proper PHP OPcache
-- production image optimization
+- PHP OPcache
+- optimized image delivery
+- production cache configuration
 
 ---
 
 ## Known Notes
 
-- Always test template integration with your Joomla template and cache stack before production rollout
+- Always test template integration with your Joomla template and cache stack before production rollout.
+- Publication date and time visibility may vary depending on template configuration.
 
 ---
 
 ## Author
 
 Kostas Stathopoulos  
-DevArt  
-https://devart.gr/
+DevArt
+
+https://devart.gr
 
 GitHub Repository:
 
