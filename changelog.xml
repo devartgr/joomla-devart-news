@@ -6,15 +6,26 @@
         <type>component</type>
         <version>1.0.2</version>
 
+        <addition>
+            <item>Added publication date and time display support</item>
+            <item>Added optional card hover effect for News Cards and Overlay Cards templates</item>
+        </addition>
+
+        <fix>
+            <item>Fixed card hover effect setting persistence during widget save operations</item>
+        </fix>
+
         <change>
-            <item>Added date and time display support for article publication dates</item>
-            <item>Improved publication timestamp visibility for news and editorial websites</item>
+            <item>Improved publication timestamp visibility for editorial and news websites</item>
+            <item>Improved frontend card interaction with lightweight CSS-only hover animations</item>
+            <item>Maintained cache-friendly and production-safe rendering architecture</item>
         </change>
 
         <note>
-            <item>Maintenance release</item>
+            <item>Maintenance release focused on editorial usability improvements</item>
             <item>Recommended update for all DevArt News installations</item>
-            <item>No database, frontend template, cache, query or module behavior changes in this release</item>
+            <item>No database schema changes introduced</item>
+            <item>No query, cache or frontend rendering architecture changes in this release</item>
         </note>
     </changelog>
 
