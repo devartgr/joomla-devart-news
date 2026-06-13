@@ -1,106 +1,105 @@
-<changelog>
-    <element>com_devartnews</element>
-    <type>component</type>
-    <version>1.0.2</version>
+<?xml version="1.0" encoding="utf-8"?>
+<changelogs>
 
-    <addition>
-        <item>Added publication date and time display support</item>
-        <item>Added newsroom-friendly timestamp formatting for article metadata</item>
-    </addition>
+    <changelog>
+        <element>com_devartnews</element>
+        <type>component</type>
+        <version>1.0.2</version>
 
-    <change>
-        <item>Improved publication date rendering across frontend news templates</item>
-        <item>Enhanced article timestamp visibility for editorial and news websites</item>
-        <item>Improved consistency of metadata presentation across widget layouts</item>
-    </change>
+        <change>
+            <item>Added date and time display support for article publication dates</item>
+            <item>Improved publication timestamp visibility for news and editorial websites</item>
+        </change>
 
-    <note>
-        <item>Maintenance release focused on publication date and time visibility</item>
-        <item>Recommended update for all DevArt News installations</item>
-        <item>No database, query, cache or architectural changes introduced in this release</item>
-    </note>
-</changelog>
+        <note>
+            <item>Maintenance release</item>
+            <item>Recommended update for all DevArt News installations</item>
+            <item>No database, frontend template, cache, query or module behavior changes in this release</item>
+        </note>
+    </changelog>
 
-<changelog>
-    <element>com_devartnews</element>
-    <type>component</type>
-    <version>1.0.1</version>
+    <changelog>
+        <element>com_devartnews</element>
+        <type>component</type>
+        <version>1.0.1</version>
 
-    <fix>
-        <item>Fixed article selector visibility in widget Data settings</item>
-        <item>Fixed Selected Articles picker incorrectly appearing for non selected article source modes</item>
-        <item>Fixed administrator widget configuration workflow inconsistency in source-specific field visibility</item>
-    </fix>
+        <fix>
+            <item>Fixed article selector visibility in widget Data settings</item>
+            <item>Fixed Selected Articles picker incorrectly appearing for non selected article source modes</item>
+            <item>Fixed administrator widget configuration workflow inconsistency in source-specific field visibility</item>
+        </fix>
 
-    <change>
-        <item>Improved administrator widget Data tab source-dependent field behavior</item>
-        <item>Improved configuration workflow consistency for widget article source selection</item>
-    </change>
+        <change>
+            <item>Improved administrator widget Data tab source-dependent field behavior</item>
+            <item>Improved configuration workflow consistency for widget article source selection</item>
+        </change>
 
-    <note>
-        <item>Hotfix maintenance release</item>
-        <item>Recommended update for all DevArt News v1.0.0 installations</item>
-        <item>No frontend rendering, cache, template or module behavior changes in this release</item>
-    </note>
-</changelog>
+        <note>
+            <item>Hotfix maintenance release</item>
+            <item>Recommended update for all DevArt News v1.0.0 installations</item>
+            <item>No frontend rendering, cache, template or module behavior changes in this release</item>
+        </note>
+    </changelog>
 
-<changelog>
-    <element>com_devartnews</element>
-    <type>component</type>
-    <version>1.0.0</version>
+    <changelog>
+        <element>com_devartnews</element>
+        <type>component</type>
+        <version>1.0.0</version>
 
-    <addition>
-        <item>Added full Joomla 6 native DevArt News component with modern MVC architecture</item>
-        <item>Added DevArt News frontend module integration</item>
-        <item>Added News Cards frontend template</item>
-        <item>Added Overlay Cards frontend template</item>
-        <item>Added Compact List frontend template</item>
-        <item>Added widget manager with create and edit workflows</item>
-        <item>Added widget duplication support</item>
-        <item>Added widget import and export functionality</item>
-        <item>Added article source modes for latest articles, category filtered articles, selected articles and related articles</item>
-        <item>Added selected article picker with search and pagination</item>
-        <item>Added category filtering support</item>
-        <item>Added featured filtering support</item>
-        <item>Added author filtering support</item>
-        <item>Added tag filtering support</item>
-        <item>Added ordering controls and article limit settings</item>
-        <item>Added current article exclusion support</item>
-        <item>Added automatic image source detection</item>
-        <item>Added intro image support</item>
-        <item>Added full article image support</item>
-        <item>Added first image inside article content support</item>
-        <item>Added thumbnail cache generation system</item>
-        <item>Added article query cache system</item>
-        <item>Added global typography controls</item>
-        <item>Added footer alignment controls</item>
-        <item>Added dashboard production management interface</item>
-        <item>Added Joomla ACL permissions support</item>
-        <item>Added GitHub-based Joomla native update support</item>
-    </addition>
+        <addition>
+            <item>Added full Joomla 6 native DevArt News component with modern MVC architecture</item>
+            <item>Added DevArt News frontend module integration</item>
+            <item>Added News Cards frontend template</item>
+            <item>Added Overlay Cards frontend template</item>
+            <item>Added Compact List frontend template</item>
+            <item>Added widget manager with create and edit workflows</item>
+            <item>Added widget duplication support</item>
+            <item>Added widget import and export functionality</item>
+            <item>Added article source modes for latest articles, category filtered articles, selected articles and related articles</item>
+            <item>Added selected article picker with search and pagination</item>
+            <item>Added category filtering support</item>
+            <item>Added featured filtering support</item>
+            <item>Added author filtering support</item>
+            <item>Added tag filtering support</item>
+            <item>Added ordering controls and article limit settings</item>
+            <item>Added current article exclusion support</item>
+            <item>Added automatic image source detection</item>
+            <item>Added intro image support</item>
+            <item>Added full article image support</item>
+            <item>Added first image inside article content support</item>
+            <item>Added thumbnail cache generation system</item>
+            <item>Added article query cache system</item>
+            <item>Added global typography controls</item>
+            <item>Added footer alignment controls</item>
+            <item>Added dashboard production management interface</item>
+            <item>Added Joomla ACL permissions support</item>
+            <item>Added GitHub-based Joomla native update support</item>
+        </addition>
 
-    <change>
-        <item>Architecture designed specifically for Joomla 6 and PHP 8.2+</item>
-        <item>Frontend rendering optimized for lightweight production-safe output</item>
-        <item>Article rendering designed for Joomla Page Cache compatibility</item>
-        <item>Frontend output optimized for Cloudflare and CDN-friendly deployments</item>
-        <item>Compact List template optimized for sidebar, related and mobile compact use cases</item>
-        <item>CSS and JavaScript namespaced to minimize template conflicts</item>
-        <item>Widget rendering optimized for high-traffic editorial environments</item>
-        <item>Preview and widget management workflows refined during release candidate hardening</item>
-    </change>
+        <change>
+            <item>Architecture designed specifically for Joomla 6 and PHP 8.2+</item>
+            <item>Frontend rendering optimized for lightweight production-safe output</item>
+            <item>Article rendering designed for Joomla Page Cache compatibility</item>
+            <item>Frontend output optimized for Cloudflare and CDN-friendly deployments</item>
+            <item>Compact List template optimized for sidebar, related and mobile compact use cases</item>
+            <item>CSS and JavaScript namespaced to minimize template conflicts</item>
+            <item>Widget rendering optimized for high-traffic editorial environments</item>
+            <item>Preview and widget management workflows refined during release candidate hardening</item>
+        </change>
 
-    <security>
-        <item>Added SQL injection protection using Joomla database APIs and parameterized queries</item>
-        <item>Added XSS protection through proper output escaping</item>
-        <item>Added CSRF protection for administrator actions</item>
-        <item>Added ACL enforcement for administrator operations</item>
-        <item>Added safe image handling and controlled cache generation workflows</item>
-    </security>
+        <security>
+            <item>Added SQL injection protection using Joomla database APIs and parameterized queries</item>
+            <item>Added XSS protection through proper output escaping</item>
+            <item>Added CSRF protection for administrator actions</item>
+            <item>Added ACL enforcement for administrator operations</item>
+            <item>Added safe image handling and controlled cache generation workflows</item>
+        </security>
 
-    <note>
-        <item>Initial public release of DevArt News for Joomla 6</item>
-        <item>Designed for editorial, magazine, news and high-traffic Joomla websites</item>
-        <item>Always test on staging before production deployment</item>
-    </note>
-</changelog>
+        <note>
+            <item>Initial public release of DevArt News for Joomla 6</item>
+            <item>Designed for editorial, magazine, news and high-traffic Joomla websites</item>
+            <item>Always test on staging before production deployment</item>
+        </note>
+    </changelog>
+
+</changelogs>
