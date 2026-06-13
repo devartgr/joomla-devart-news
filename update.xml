@@ -18,7 +18,7 @@
 
         <changelogurl>https://raw.githubusercontent.com/devartgr/joomla-devart-news/main/changelog.xml</changelogurl>
 
-        <targetplatform name="joomla" version="6.0" />
+        <targetplatform name="joomla" version="6.*" />
         <php_minimum>8.2</php_minimum>
 
         <maintainer>Kostas Stathopoulos</maintainer>
