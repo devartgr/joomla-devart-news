@@ -14,7 +14,7 @@
             <downloadurl type="full" format="zip">https://github.com/devartgr/joomla-devart-news/releases/download/v1.0.2/pkg_devartnews_v1.0.2.zip</downloadurl>
         </downloads>
 
-        <sha256>2445d5220852cca4dca9e4ecad11c3c8585cd97891cdc748385315f722a87955</sha256>
+        <sha256>b785f9969c8ea11e87b5c0f29b7cedee523d089468f2d6ce16d34962808c03cf</sha256>
 
         <changelogurl>https://raw.githubusercontent.com/devartgr/joomla-devart-news/main/changelog.xml</changelogurl>
 
