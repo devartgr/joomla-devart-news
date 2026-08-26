@@ -2,8 +2,49 @@
 <changelogs>
 
     <changelog>
-        <element>com_devartnews</element>
-        <type>component</type>
+        <element>pkg_devartnews</element>
+        <type>package</type>
+        <version>1.1.0</version>
+
+        <addition>
+            <item>Administrator dashboard hub with New Widget, Widget List, Options, and cache maintenance</item>
+            <item>Header / Footer controls and Content Simple / Advanced grouping</item>
+            <item>Template Theme / Layout / Cards grouping, including News Cards and Overlay Cards option groups</item>
+            <item>Multilingual administrator, module, and package language packs (15 locales)</item>
+            <item>GitHub package update metadata targeting pkg_devartnews (site client)</item>
+        </addition>
+
+        <fix>
+            <item>Module cachemode migrated from static to safeuri, including installer migration for existing modules</item>
+            <item>Frontend article links escaped with htmlspecialchars</item>
+            <item>Article file-cache key includes Itemid</item>
+            <item>CSS assets use version=auto</item>
+            <item>Removed dead administrator WidgetRenderer with installer cleanup of leftover upgrade files</item>
+            <item>Hardening for JSON encode paths, Table merge safety, dashboard DatabaseInterface usage, export version from installed manifest, and PHP 8.4 nullable typing</item>
+        </fix>
+
+        <change>
+            <item>Public release after 1.0.2; intermediate private builds are not listed separately</item>
+            <item>Import widgets UX aligned with DevArt Widgets / Slider</item>
+            <item>Compact List Theme / Layout / Cards visibility refinements</item>
+            <item>First visible image in single-column layouts uses fetchpriority=high and loading=eager</item>
+            <item>In-request widget lookup cache and throttled article JSON cache garbage collection</item>
+            <item>Thumbnail generation uses flock with atomic temp-file + rename writes and non-blocking cleanup lock</item>
+            <item>PHP minimum raised to 8.3.0; Joomla 6+ only</item>
+        </change>
+
+        <note>
+            <item>Safe update from public 1.0.0, 1.0.1, and 1.0.2</item>
+            <item>Install or update using the full pkg_devartnews package only</item>
+            <item>Designed for large news portals, high traffic, and Cloudflare full-page cache</item>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+            <item>Always test on staging before production deployment</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>pkg_devartnews</element>
+        <type>package</type>
         <version>1.0.2</version>
 
         <addition>
@@ -21,21 +62,18 @@
             <item>Improved publication timestamp visibility for editorial and news websites</item>
             <item>Improved frontend card interaction with lightweight CSS-only hover animations</item>
             <item>Improved thumbnail cache housekeeping for high-traffic and content-heavy websites</item>
-            <item>Maintained cache-friendly and production-safe rendering architecture</item>
         </change>
 
         <note>
-            <item>Maintenance release focused on editorial usability and cache housekeeping improvements</item>
+            <item>Maintenance release focused on editorial usability and cache housekeeping</item>
             <item>Recommended update for all DevArt News installations</item>
             <item>No database schema changes introduced</item>
-            <item>No article query or frontend rendering architecture changes in this release</item>
-            <item>Thumbnail cleanup is performed safely and gradually to avoid heavy filesystem operations on high-traffic websites</item>
         </note>
     </changelog>
 
     <changelog>
-        <element>com_devartnews</element>
-        <type>component</type>
+        <element>pkg_devartnews</element>
+        <type>package</type>
         <version>1.0.1</version>
 
         <fix>
@@ -52,54 +90,26 @@
         <note>
             <item>Hotfix maintenance release</item>
             <item>Recommended update for all DevArt News v1.0.0 installations</item>
-            <item>No frontend rendering, cache, template or module behavior changes in this release</item>
         </note>
     </changelog>
 
     <changelog>
-        <element>com_devartnews</element>
-        <type>component</type>
+        <element>pkg_devartnews</element>
+        <type>package</type>
         <version>1.0.0</version>
 
         <addition>
             <item>Added full Joomla 6 native DevArt News component with modern MVC architecture</item>
             <item>Added DevArt News frontend module integration</item>
-            <item>Added News Cards frontend template</item>
-            <item>Added Overlay Cards frontend template</item>
-            <item>Added Compact List frontend template</item>
-            <item>Added widget manager with create and edit workflows</item>
-            <item>Added widget duplication support</item>
-            <item>Added widget import and export functionality</item>
-            <item>Added article source modes for latest articles, category filtered articles, selected articles and related articles</item>
-            <item>Added selected article picker with search and pagination</item>
-            <item>Added category filtering support</item>
-            <item>Added featured filtering support</item>
-            <item>Added author filtering support</item>
-            <item>Added tag filtering support</item>
-            <item>Added ordering controls and article limit settings</item>
-            <item>Added current article exclusion support</item>
-            <item>Added automatic image source detection</item>
-            <item>Added intro image support</item>
-            <item>Added full article image support</item>
-            <item>Added first image inside article content support</item>
-            <item>Added thumbnail cache generation system</item>
-            <item>Added article query cache system</item>
-            <item>Added global typography controls</item>
-            <item>Added footer alignment controls</item>
-            <item>Added dashboard production management interface</item>
-            <item>Added Joomla ACL permissions support</item>
+            <item>Added News Cards, Overlay Cards, and Compact List frontend templates</item>
+            <item>Added widget manager with create, edit, duplication, import, and export</item>
+            <item>Added article sources, filters, ordering, limits, and image/thumbnail caching</item>
+            <item>Added dashboard administration interface and Joomla ACL permissions support</item>
             <item>Added GitHub-based Joomla native update support</item>
         </addition>
 
         <change>
-            <item>Architecture designed specifically for Joomla 6 and PHP 8.2+</item>
-            <item>Frontend rendering optimized for lightweight production-safe output</item>
-            <item>Article rendering designed for Joomla Page Cache compatibility</item>
-            <item>Frontend output optimized for Cloudflare and CDN-friendly deployments</item>
-            <item>Compact List template optimized for sidebar, related and mobile compact use cases</item>
-            <item>CSS and JavaScript namespaced to minimize template conflicts</item>
-            <item>Widget rendering optimized for high-traffic editorial environments</item>
-            <item>Preview and widget management workflows refined during release candidate hardening</item>
+            <item>Architecture designed for Joomla 6, lightweight production-safe output, Page Cache and Cloudflare-friendly deployments</item>
         </change>
 
         <security>
@@ -112,7 +122,6 @@
 
         <note>
             <item>Initial public release of DevArt News for Joomla 6</item>
-            <item>Designed for editorial, magazine, news and high-traffic Joomla websites</item>
             <item>Always test on staging before production deployment</item>
         </note>
     </changelog>

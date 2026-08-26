@@ -1,21 +1,28 @@
 # DevArt News for Joomla
 
-Professional news widgets package for Joomla 6, designed for editorial, magazine, news, and high-performance content websites.
+Professional news widgets package for Joomla 6, designed for editorial,
+magazine, news, and high-performance content websites.
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
-![PHP](https://img.shields.io/badge/PHP-8.2%2B-green)
-![Release](https://img.shields.io/badge/Version-1.0.2-orange)
+![PHP](https://img.shields.io/badge/PHP-8.3%2B-green)
+![Release](https://img.shields.io/badge/Version-1.1.0-orange)
 ![License](https://img.shields.io/badge/License-GPLv3-red)
 
 ---
 
 ## Overview
 
-DevArt News is a modern Joomla 6 native news widgets package built for editorial websites, magazines, newspapers, news portals, and high-traffic content environments.
+DevArt News is a modern Joomla 6 native news widgets package built for editorial
+websites, magazines, newspapers, news portals, and high-traffic content
+environments.
 
-It provides lightweight, cache-friendly article rendering with multiple frontend templates, advanced filtering, publication metadata support, smart image handling, and production-safe performance.
+It provides lightweight, cache-friendly article rendering with multiple frontend
+templates, advanced filtering, publication metadata support, smart image
+handling, and production-safe performance.
 
-Designed specifically for Joomla 6 with modern architecture, strict typing, and zero legacy baggage.
+Designed specifically for Joomla 6 with modern architecture, strict typing, and
+zero legacy baggage. Built for very large article databases, high concurrency,
+and Cloudflare full-page cache deployments.
 
 ---
 
@@ -46,11 +53,9 @@ Use cases:
 
 Flexible content sources:
 
-- Latest Articles
-- Category Filtered Articles
-- Selected Articles
-- Related Articles
-- Current Article Context
+- Latest / all articles
+- Category filtered articles
+- Selected articles
 
 Filtering options:
 
@@ -58,6 +63,7 @@ Filtering options:
 - featured filtering
 - author filtering
 - tags
+- date filters
 - ordering controls
 - exclude current article
 - article limits
@@ -68,25 +74,12 @@ Filtering options:
 
 Display important article information including:
 
-- publication date
-- publication time
+- publication date / time
 - author
 - category
 - read more links
 
-Example format:
-
-```text
-13/06/2026 15:43
-```
-
-Ideal for:
-
-- news portals
-- magazines
-- newspapers
-- editorial websites
-- live content environments
+Ideal for news portals, magazines, newspapers, and editorial websites.
 
 ---
 
@@ -101,10 +94,10 @@ Automatic image discovery:
 
 Features:
 
-- thumbnail cache generation
+- thumbnail cache generation (`resize` / `crop`)
 - safe image fallback logic
+- concurrent-safe thumbnail writes
 - optimized frontend rendering
-- compact thumbnail support
 
 ---
 
@@ -122,44 +115,21 @@ Features:
 - Cloudflare-friendly architecture
 - Joomla Page Cache compatibility
 - production-safe rendering
+- LCP-friendly first-image priority on single-column layouts
 
 ---
 
 ### Admin Features
 
-- Widget manager
-- Create / Edit widgets
-- Duplicate widgets
+- Dashboard hub (New Widget / Widget List / Options / cache maintenance)
+- Widget manager with create / edit / duplicate
 - Import / Export widgets
-- Template settings
-- Global typography controls
-- Dashboard management interface
-- ACL permissions support
+- Header / Footer and Content Simple / Advanced grouping
+- Template Theme / Layout / Cards grouping
+- Per-template News Cards and Overlay Cards controls
 - Selected article picker with search and pagination
-
----
-
-### Compact List Template
-
-Purpose-built lightweight template for:
-
-- sidebar latest news
-- sports blocks
-- related stories
-- article footer blocks
-- category compact lists
-- mobile compact display
-
-Features:
-
-- left thumbnail layout
-- compact responsive rendering
-- optional category badge
-- optional metadata
-- optional author/date
-- optional publication timestamp
-- intro line controls
-- optional read more
+- ACL permissions support
+- 15 administrator language packs
 
 ---
 
@@ -167,21 +137,21 @@ Features:
 
 This package installs:
 
-- com_devartnews
-- mod_devartnews
+- `com_devartnews`
+- `mod_devartnews`
 
 ---
 
 ## Requirements
 
 - Joomla 6.x
-- PHP 8.2+
+- PHP 8.3+
 
 ---
 
 ## Installation
 
-1. Download the latest release
+1. Download the latest release ZIP (`pkg_devartnews_v1.1.0.zip`)
 2. Open:
 
 ```text
@@ -216,6 +186,8 @@ Update server:
 https://raw.githubusercontent.com/devartgr/joomla-devart-news/main/update.xml
 ```
 
+Install or update using the full package ZIP only.
+
 ---
 
 ## Performance
@@ -225,14 +197,13 @@ Designed for production and high-traffic use.
 Features:
 
 - article query caching
-- thumbnail caching
+- thumbnail caching with locked generation
+- module `safeuri` cache mode
 - lightweight rendering
 - minimal frontend overhead
 - Joomla Page Cache compatibility
-- Cloudflare-friendly output
+- Cloudflare full-page-cache friendly output
 - CDN-friendly architecture
-- widget-level cache isolation
-- safe repeated rendering
 
 Suitable for:
 
@@ -249,11 +220,10 @@ Suitable for:
 - Joomla ACL support
 - CSRF-safe administrator actions
 - Joomla query builder protection
-- XSS-safe rendering
+- XSS-safe rendering (including escaped article links)
 - strict input validation
 - safe image handling
 - namespaced architecture
-- JED-ready packaging
 
 ---
 
@@ -262,7 +232,7 @@ Suitable for:
 Supported:
 
 - Joomla 6.x
-- PHP 8.2+
+- PHP 8.3+
 - Joomla native update system
 - modern Joomla MVC architecture
 
@@ -271,47 +241,41 @@ Not supported:
 - Joomla 3
 - Joomla 4
 - Joomla 5
-- legacy PHP versions
+- PHP 8.2 and earlier
 
 ---
 
 ## Current Version
 
-**1.0.2**
+**1.1.0**
 
 ---
 
-## Changelog 1.0.2
+## Changelog Highlights (1.1.0)
 
 ### Added
 
-- Added publication date and time display support
-- Added newsroom-friendly timestamp formatting
+- Administrator dashboard hub and cache maintenance
+- Header / Footer and Content Simple / Advanced UI
+- Template Theme / Layout / Cards grouping
+- 15 language packs
+- Package-targeted GitHub update metadata
 
 ### Improved
 
-- Improved publication metadata visibility across frontend templates
-- Improved consistency of article timestamp rendering
-- Enhanced editorial workflow support for news websites
+- Import UX aligned with DevArt Widgets / Slider
+- LCP-friendly first image priority on single-column layouts
+- Widget and article-cache efficiency improvements
+- Concurrent-safe thumbnail generation
 
----
+### Fixed
 
-## First Public Release Highlights
+- Module cache mode `static` → `safeuri` (with installer migration)
+- Escaped frontend article links
+- Article cache key includes `Itemid`
+- Additional production hardening for Joomla 6 / PHP 8.3+
 
-### Included
-
-- News Cards template
-- Overlay Cards template
-- Compact List template
-- article query caching
-- thumbnail caching
-- widget duplication
-- import / export
-- global typography controls
-- ACL permissions
-- responsive frontend rendering
-- dashboard administration interface
-- mobile optimized layouts
+See `CHANGELOG.md` and `changelog.xml` for the full public history.
 
 ---
 
@@ -328,7 +292,7 @@ Frontend:
 
 Infrastructure:
 
-- Cloudflare CDN
+- Cloudflare CDN / full-page cache
 - PHP OPcache
 - optimized image delivery
 - production cache configuration
@@ -337,8 +301,11 @@ Infrastructure:
 
 ## Known Notes
 
-- Always test template integration with your Joomla template and cache stack before production rollout.
-- Publication date and time visibility may vary depending on template configuration.
+- Always test template integration with your Joomla template and cache stack
+  before production rollout.
+- Purge CDN / reverse-proxy cache after updating frontend-facing packages.
+- Optional DBA indexing for `#__content.hits` may help sites that heavily use
+  Hits ordering on very large article tables.
 
 ---
 
@@ -359,7 +326,8 @@ https://github.com/devartgr/joomla-devart-news
 
 This software is provided "as is", without warranty of any kind.
 
-DevArt shall not be liable for data loss, downtime, rendering issues, cache conflicts, production failures, or issues resulting from use or misuse.
+DevArt shall not be liable for data loss, downtime, rendering issues, cache
+conflicts, production failures, or issues resulting from use or misuse.
 
 Always test in staging before production deployment.
 
