@@ -4,6 +4,28 @@
     <changelog>
         <element>pkg_devartnews</element>
         <type>package</type>
+        <version>1.1.3</version>
+
+        <fix>
+            <item>Admin form actions and widget edit links use Route::_ with xhtml=false before htmlspecialchars</item>
+        </fix>
+
+        <change>
+            <item>Removed unused duplicate administrator script.php; installer deletes leftover admin copy on update</item>
+        </change>
+
+        <note>
+            <item>Safe update from public 1.1.2, 1.1.1, 1.1.0, and earlier 1.0.x packages</item>
+            <item>Install or update using the full pkg_devartnews package only</item>
+            <item>Designed for large news portals, high traffic, and Cloudflare full-page cache</item>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+            <item>Always test on staging before production deployment</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>pkg_devartnews</element>
+        <type>package</type>
         <version>1.1.2</version>
 
         <addition>

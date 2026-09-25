@@ -5,7 +5,7 @@ magazine, news, and high-performance content websites.
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.3%2B-green)
-![Release](https://img.shields.io/badge/Version-1.1.2-orange)
+![Release](https://img.shields.io/badge/Version-1.1.3-orange)
 ![License](https://img.shields.io/badge/License-GPLv3-red)
 
 ---
@@ -152,7 +152,7 @@ This package installs:
 
 ## Installation
 
-1. Download the latest release ZIP (`pkg_devartnews_v1.1.2.zip`)
+1. Download the latest release ZIP (`pkg_devartnews_v1.1.3.zip`)
 2. Open:
 
 ```text
@@ -248,31 +248,21 @@ Not supported:
 
 ## Current Version
 
-**1.1.2**
+**1.1.3**
 
 ---
 
-## Changelog Highlights (1.1.2)
-
-### Added
-
-- Content plugin `plg_content_devartnews` for cache-generation invalidation
-- Shared article cache key across article pages (better hit rate)
-- Joomla Cache API article payloads + WebP thumbnail preference
-- Optional DBA notes for `hits` / `created` indexes on very large sites
+## Changelog Highlights (1.1.3)
 
 ### Improved
 
-- Slimmer cache payloads, single-flight fill, thumb stampede guards
-- Featured schedule (`featured_up` / `featured_down`) and UTC date filters
-- Generated thumbnails emit `width` / `height` when known (CWV)
-- Conditional body SELECTs, slug-only cache, ImageService / IdHelper / StyleSanitizer
+- Admin form actions and widget edit links use `Route::_(..., false)` before
+  `htmlspecialchars` (consistent escaping)
 
-### Fixed
+### Changed
 
-- Intro TinyMCE entities (`&nbsp;`) and Joomla shortcodes no longer leak as text
-- Duplicate / export / import preserve `access`, `language`, `created_by`
-- Header / footer root-relative links work on subdirectory installs
+- Removed unused duplicate `admin/script.php`; installer deletes leftover admin
+  copy on update
 
 See `CHANGELOG.md` and `changelog.xml` for the full public history.
 
