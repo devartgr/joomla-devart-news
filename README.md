@@ -5,7 +5,7 @@ magazine, news, and high-performance content websites.
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.3%2B-green)
-![Release](https://img.shields.io/badge/Version-1.1.1-orange)
+![Release](https://img.shields.io/badge/Version-1.1.2-orange)
 ![License](https://img.shields.io/badge/License-GPLv3-red)
 
 ---
@@ -139,6 +139,7 @@ This package installs:
 
 - `com_devartnews`
 - `mod_devartnews`
+- `plg_content_devartnews` (article cache generation)
 
 ---
 
@@ -151,7 +152,7 @@ This package installs:
 
 ## Installation
 
-1. Download the latest release ZIP (`pkg_devartnews_v1.1.1.zip`)
+1. Download the latest release ZIP (`pkg_devartnews_v1.1.2.zip`)
 2. Open:
 
 ```text
@@ -247,29 +248,31 @@ Not supported:
 
 ## Current Version
 
-**1.1.1**
+**1.1.2**
 
 ---
 
-## Changelog Highlights (1.1.1)
+## Changelog Highlights (1.1.2)
 
 ### Added
 
-- Joomla-style widgets trash UX (Trashed filter, Untrash, Delete from Trash)
-- AdminController plural language strings for all 15 administrator locales
+- Content plugin `plg_content_devartnews` for cache-generation invalidation
+- Shared article cache key across article pages (better hit rate)
+- Joomla Cache API article payloads + WebP thumbnail preference
+- Optional DBA notes for `hits` / `created` indexes on very large sites
 
 ### Improved
 
-- Joomla 7 forward-compat (`getModel()`, Document toolbar buttons)
-- Non-SEF article links: `Route::_(..., false)` before `htmlspecialchars`
-- Installer language cleanup and article JSON cache flush on update
-- In-request `getArticles` cache for multi-module pages
-- Author JOIN only when `show_author` is enabled
+- Slimmer cache payloads, single-flight fill, thumb stampede guards
+- Featured schedule (`featured_up` / `featured_down`) and UTC date filters
+- Generated thumbnails emit `width` / `height` when known (CWV)
+- Conditional body SELECTs, slug-only cache, ImageService / IdHelper / StyleSanitizer
 
 ### Fixed
 
-- Raw language keys after list delete/publish actions
-- Leftover unprefixed module language files shadowing labels
+- Intro TinyMCE entities (`&nbsp;`) and Joomla shortcodes no longer leak as text
+- Duplicate / export / import preserve `access`, `language`, `created_by`
+- Header / footer root-relative links work on subdirectory installs
 
 See `CHANGELOG.md` and `changelog.xml` for the full public history.
 
@@ -301,7 +304,10 @@ Infrastructure:
   before production rollout.
 - Purge CDN / reverse-proxy cache after updating frontend-facing packages.
 - Optional DBA indexing for `#__content.hits` may help sites that heavily use
-  Hits ordering on very large article tables.
+  Hits ordering (`hits_desc`) on very large article tables. Core Joomla does
+  not ship a dedicated hits index; after measuring query plans on staging, a
+  DBA may add something like `(hits, id)` or a composite covering
+  `(state, access, hits, id)`. DevArt News does **not** create this index.
 
 ---
 

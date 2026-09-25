@@ -4,6 +4,45 @@
     <changelog>
         <element>pkg_devartnews</element>
         <type>package</type>
+        <version>1.1.2</version>
+
+        <addition>
+            <item>Content plugin plg_content_devartnews bumps article-cache generation on article save, state change, and delete</item>
+            <item>Shared article cache key across article pages (exclude_current applied after cache load)</item>
+            <item>WebP thumbnail preference when GD supports imagewebp, with JPEG fallback</item>
+            <item>Joomla Cache API article payloads (File / Redis / Memcached via Global Configuration)</item>
+            <item>Optional DBA notes for hits and created indexes on very large #__content tables</item>
+        </addition>
+
+        <fix>
+            <item>Intro text no longer shows TinyMCE entities (&amp;nbsp;) or Joomla shortcodes as visible text</item>
+            <item>Duplicate / export / import now preserve access, language, and created_by; imports land unpublished</item>
+            <item>Header and footer root-relative links work correctly on subdirectory installs</item>
+            <item>Featured mode respects featured_up / featured_down schedule windows</item>
+            <item>Date filter boundaries converted to UTC before comparing with #__content.created</item>
+        </fix>
+
+        <change>
+            <item>Slimmer cached article payloads (plain truncated intro, empty fulltext after image extraction)</item>
+            <item>Thumbnail locks kept on disk with non-blocking flock; pixel/memory guards and max 3 new thumbs per request</item>
+            <item>Source mtime included in thumbnail filename hash for CDN freshness</item>
+            <item>Generated thumbs emit width/height attributes when known (CWV)</item>
+            <item>Conditional introtext/fulltext SELECTs; slug-only cache with Route after load; IdHelper, ImageService, StyleSanitizer maintainability passes</item>
+            <item>Package now includes plg_content_devartnews (auto-enabled on install/update)</item>
+        </change>
+
+        <note>
+            <item>Safe update from public 1.1.1, 1.1.0, and earlier 1.0.x packages</item>
+            <item>Install or update using the full pkg_devartnews package only</item>
+            <item>Designed for large news portals, high traffic, and Cloudflare full-page cache</item>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+            <item>Always test on staging before production deployment</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>pkg_devartnews</element>
+        <type>package</type>
         <version>1.1.1</version>
 
         <addition>
@@ -21,7 +60,7 @@
             <item>Duplicate / Export toolbar uses Document::getToolbar()->appendButton (avoids deprecated ToolbarHelper::custom and Toolbar::getInstance)</item>
             <item>Installer flushes article JSON cache on install/update so cached links are rebuilt</item>
             <item>Default widgets list, dashboard totals, and export-all exclude trashed rows</item>
-            <item>In-request getArticles cache so multiple modules for the same widget reuse one fetch per request</item>
+            <item>In-request getArticles cache so multiple modules for the same widget reuse one fetch</item>
             <item>LEFT JOIN #__users only when show_author is enabled</item>
         </change>
 
