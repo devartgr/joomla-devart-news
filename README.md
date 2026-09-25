@@ -5,7 +5,7 @@ magazine, news, and high-performance content websites.
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.3%2B-green)
-![Release](https://img.shields.io/badge/Version-1.1.0-orange)
+![Release](https://img.shields.io/badge/Version-1.1.1-orange)
 ![License](https://img.shields.io/badge/License-GPLv3-red)
 
 ---
@@ -151,7 +151,7 @@ This package installs:
 
 ## Installation
 
-1. Download the latest release ZIP (`pkg_devartnews_v1.1.0.zip`)
+1. Download the latest release ZIP (`pkg_devartnews_v1.1.1.zip`)
 2. Open:
 
 ```text
@@ -247,33 +247,29 @@ Not supported:
 
 ## Current Version
 
-**1.1.0**
+**1.1.1**
 
 ---
 
-## Changelog Highlights (1.1.0)
+## Changelog Highlights (1.1.1)
 
 ### Added
 
-- Administrator dashboard hub and cache maintenance
-- Header / Footer and Content Simple / Advanced UI
-- Template Theme / Layout / Cards grouping
-- 15 language packs
-- Package-targeted GitHub update metadata
+- Joomla-style widgets trash UX (Trashed filter, Untrash, Delete from Trash)
+- AdminController plural language strings for all 15 administrator locales
 
 ### Improved
 
-- Import UX aligned with DevArt Widgets / Slider
-- LCP-friendly first image priority on single-column layouts
-- Widget and article-cache efficiency improvements
-- Concurrent-safe thumbnail generation
+- Joomla 7 forward-compat (`getModel()`, Document toolbar buttons)
+- Non-SEF article links: `Route::_(..., false)` before `htmlspecialchars`
+- Installer language cleanup and article JSON cache flush on update
+- In-request `getArticles` cache for multi-module pages
+- Author JOIN only when `show_author` is enabled
 
 ### Fixed
 
-- Module cache mode `static` → `safeuri` (with installer migration)
-- Escaped frontend article links
-- Article cache key includes `Itemid`
-- Additional production hardening for Joomla 6 / PHP 8.3+
+- Raw language keys after list delete/publish actions
+- Leftover unprefixed module language files shadowing labels
 
 See `CHANGELOG.md` and `changelog.xml` for the full public history.
 

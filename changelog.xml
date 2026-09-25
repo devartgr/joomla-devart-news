@@ -4,6 +4,39 @@
     <changelog>
         <element>pkg_devartnews</element>
         <type>package</type>
+        <version>1.1.1</version>
+
+        <addition>
+            <item>Joomla-style widgets trash UX with Trashed filter, Untrash, and permanent Delete only from Trash</item>
+            <item>AdminController plural language strings (COM_DEVARTNEWS_N_ITEMS_*) for all 15 administrator locales</item>
+        </addition>
+
+        <fix>
+            <item>Installer removes leftover unprefixed mod_devartnews language files that shadowed current labels</item>
+            <item>Route::_ with xhtml=false before htmlspecialchars to prevent ampersand double-encoding on non-SEF sites</item>
+        </fix>
+
+        <change>
+            <item>Admin views use getModel() instead of deprecated AbstractView::get() (removed in Joomla 7)</item>
+            <item>Duplicate / Export toolbar uses Document::getToolbar()->appendButton (avoids deprecated ToolbarHelper::custom and Toolbar::getInstance)</item>
+            <item>Installer flushes article JSON cache on install/update so cached links are rebuilt</item>
+            <item>Default widgets list, dashboard totals, and export-all exclude trashed rows</item>
+            <item>In-request getArticles cache so multiple modules for the same widget reuse one fetch per request</item>
+            <item>LEFT JOIN #__users only when show_author is enabled</item>
+        </change>
+
+        <note>
+            <item>Safe update from public 1.1.0 and earlier 1.0.x packages</item>
+            <item>Install or update using the full pkg_devartnews package only</item>
+            <item>Designed for large news portals, high traffic, and Cloudflare full-page cache</item>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+            <item>Always test on staging before production deployment</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>pkg_devartnews</element>
+        <type>package</type>
         <version>1.1.0</version>
 
         <addition>
