@@ -5,7 +5,7 @@ magazine, news, and high-performance content websites.
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.3%2B-green)
-![Release](https://img.shields.io/badge/Version-1.1.3-orange)
+![Release](https://img.shields.io/badge/Version-1.1.4-orange)
 ![License](https://img.shields.io/badge/License-GPLv3-red)
 
 ---
@@ -152,7 +152,7 @@ This package installs:
 
 ## Installation
 
-1. Download the latest release ZIP (`pkg_devartnews_v1.1.3.zip`)
+1. Download the latest release ZIP (`pkg_devartnews_v1.1.4.zip`)
 2. Open:
 
 ```text
@@ -248,21 +248,24 @@ Not supported:
 
 ## Current Version
 
-**1.1.3**
+**1.1.4**
 
 ---
 
-## Changelog Highlights (1.1.3)
+## Changelog Highlights (1.1.4)
 
-### Improved
+### Fixed
 
-- Admin form actions and widget edit links use `Route::_(..., false)` before
-  `htmlspecialchars` (consistent escaping)
+- Article-cache generation moved out of component params (no Options rewind /
+  `_system` clean)
+- Content plugin coverage: `com_content.form`, featured toggle, content
+  categories; module HTML cache cleaned on bump
+- Bounded single-flight locks (64 buckets) with cache re-get for waiters
+- `width`/`height` only on generated thumbs; import notice on access fallback
 
 ### Changed
 
-- Removed unused duplicate `admin/script.php`; installer deletes leftover admin
-  copy on update
+- Generation stored as Cache API key with flock and 45-second debounce
 
 See `CHANGELOG.md` and `changelog.xml` for the full public history.
 

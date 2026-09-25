@@ -4,6 +4,33 @@
     <changelog>
         <element>pkg_devartnews</element>
         <type>package</type>
+        <version>1.1.4</version>
+
+        <fix>
+            <item>Article-cache generation no longer stored in component params (avoids Options-form rewind and expensive _system cache clean)</item>
+            <item>Content plugin also bumps cache on com_content.form saves, featured toggle, and com_content category changes</item>
+            <item>Module HTML cache (mod_devartnews) is cleaned when article-cache generation bumps</item>
+            <item>Single-flight waiters re-read the cache key before falling back to a local query; lock files bounded to 64 buckets</item>
+            <item>width/height attributes only on generated thumbs (media/mod_devartnews/cache/devart-news-*), not original images</item>
+            <item>Import shows a notice when a missing access level falls back to Public</item>
+        </fix>
+
+        <change>
+            <item>Cache generation stored as Cache API key with flock and 45-second debounce</item>
+        </change>
+
+        <note>
+            <item>Safe update from public 1.1.3, 1.1.2, 1.1.1, 1.1.0, and earlier 1.0.x packages</item>
+            <item>Install or update using the full pkg_devartnews package only</item>
+            <item>Designed for large news portals, high traffic, and Cloudflare full-page cache</item>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+            <item>Always test on staging before production deployment</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>pkg_devartnews</element>
+        <type>package</type>
         <version>1.1.3</version>
 
         <fix>
