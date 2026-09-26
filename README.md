@@ -5,7 +5,7 @@ magazine, news, and high-performance content websites.
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.3%2B-green)
-![Release](https://img.shields.io/badge/Version-1.1.4-orange)
+![Release](https://img.shields.io/badge/Version-1.2.0-orange)
 ![License](https://img.shields.io/badge/License-GPLv3-red)
 
 ---
@@ -152,7 +152,7 @@ This package installs:
 
 ## Installation
 
-1. Download the latest release ZIP (`pkg_devartnews_v1.1.4.zip`)
+1. Download the latest release ZIP (`pkg_devartnews_v1.2.0.zip`)
 2. Open:
 
 ```text
@@ -248,24 +248,31 @@ Not supported:
 
 ## Current Version
 
-**1.1.4**
+**1.2.0**
 
 ---
 
-## Changelog Highlights (1.1.4)
+## Changelog Highlights (1.2.0)
+
+### Added
+
+- Architecture split: `ArticleQuery`, `ArticlePresenter`, `ArticleCache`,
+  `WidgetRepository`, `WidgetSettings` with component DI
+- `mod_devartnews` on Joomla 6 `AbstractModuleDispatcher`
+- Incomplete-thumb self-heal and pending generation debounce
 
 ### Fixed
 
-- Article-cache generation moved out of component params (no Options rewind /
-  `_system` clean)
-- Content plugin coverage: `com_content.form`, featured toggle, content
-  categories; module HTML cache cleaned on bump
-- Bounded single-flight locks (64 buckets) with cache re-get for waiters
-- `width`/`height` only on generated thumbs; import notice on access fallback
+- List publish/unpublish/trash/delete flushes widget metadata + module HTML
+- Clear thumbnails also flushes article payload cache
+- Module image `src` via `Uri::root(true)` (subdirectory / deep SEF)
+- Race-safe pending generation flush; no dropped mid-window bumps
 
 ### Changed
 
-- Generation stored as Cache API key with flock and 45-second debounce
+- Max new thumbnails per request raised to 8
+- Throttled module HTML clean on thumb waves; generation memoised per request
+- Import normalises settings through `WidgetSettings`
 
 See `CHANGELOG.md` and `changelog.xml` for the full public history.
 

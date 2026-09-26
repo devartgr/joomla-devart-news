@@ -4,6 +4,42 @@
     <changelog>
         <element>pkg_devartnews</element>
         <type>package</type>
+        <version>1.2.0</version>
+
+        <addition>
+            <item>Architecture split: ArticleQuery, ArticlePresenter, ArticleCache, WidgetRepository, WidgetSettings with DI via DevartnewsComponent</item>
+            <item>mod_devartnews uses Joomla 6 AbstractModuleDispatcher (services/provider.php + Dispatcher)</item>
+            <item>Incomplete-thumb self-heal (1-minute TTL, preserved image source, rehydrate on hit)</item>
+            <item>Pending generation debounce flag so mid-window bumps are not dropped</item>
+        </addition>
+
+        <fix>
+            <item>List publish/unpublish/trash/delete flushes widget metadata and mod_devartnews HTML cache</item>
+            <item>Clear thumbnails also flushes article payload cache (no stale missing thumb URLs)</item>
+            <item>Module image src prefixed with Uri::root(true) for subdirectory / deep SEF installs</item>
+            <item>Incomplete-thumb rehydrate no longer blanks body-sourced images</item>
+            <item>Pending generation flush is race-safe (onlyIfPending + non-blocking lock)</item>
+        </fix>
+
+        <change>
+            <item>Max new thumbnails per request raised from 3 to 8</item>
+            <item>Article-cache generation memoised per request; module HTML clean throttled to 60s on thumb waves (forced on real bumps)</item>
+            <item>Widget import normalises settings via WidgetSettings::fromFormData()</item>
+            <item>Debug-gated logging on critical cache/image catches (JDEBUG / app debug only)</item>
+        </change>
+
+        <note>
+            <item>Safe update from public 1.1.4, 1.1.3, 1.1.2, 1.1.1, 1.1.0, and earlier 1.0.x packages</item>
+            <item>Install or update using the full pkg_devartnews package only</item>
+            <item>Designed for large news portals, high traffic, and Cloudflare full-page cache</item>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+            <item>Always test on staging before production deployment</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>pkg_devartnews</element>
+        <type>package</type>
         <version>1.1.4</version>
 
         <fix>
