@@ -4,6 +4,28 @@
     <changelog>
         <element>pkg_devartnews</element>
         <type>package</type>
+        <version>1.2.1</version>
+
+        <fix>
+            <item>Raise generated-thumbnail source pixel guard from ~12MP to ~36MP so typical phone-camera JPEGs still produce thumbs under resize/crop instead of falling back to full-size originals</item>
+        </fix>
+
+        <change>
+            <item>Debug-only log when a thumb is skipped for pixel or memory headroom limits (JDEBUG / app debug)</item>
+        </change>
+
+        <note>
+            <item>Safe update from public 1.2.0, 1.1.4, and earlier 1.0.x / 1.1.x packages</item>
+            <item>Install or update using the full pkg_devartnews package only</item>
+            <item>Designed for large news portals, high traffic, and Cloudflare full-page cache</item>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+            <item>Always test on staging before production deployment</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>pkg_devartnews</element>
+        <type>package</type>
         <version>1.2.0</version>
 
         <addition>
