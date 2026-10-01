@@ -5,7 +5,7 @@ magazine, news, and high-performance content websites.
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.3%2B-green)
-![Release](https://img.shields.io/badge/Version-1.2.1-orange)
+![Release](https://img.shields.io/badge/Version-1.2.2-orange)
 ![License](https://img.shields.io/badge/License-GPLv3-red)
 
 ---
@@ -152,7 +152,7 @@ This package installs:
 
 ## Installation
 
-1. Download the latest release ZIP (`pkg_devartnews_v1.2.1.zip`)
+1. Download the latest release ZIP (`pkg_devartnews_v1.2.2.zip`)
 2. Open:
 
 ```text
@@ -248,20 +248,23 @@ Not supported:
 
 ## Current Version
 
-**1.2.1**
+**1.2.2**
 
 ---
 
-## Changelog Highlights (1.2.1)
+## Changelog Highlights (1.2.2)
 
 ### Fixed
 
-- Raise generated-thumbnail source pixel guard from ~12MP to ~36MP so typical
-  phone-camera JPEGs still produce thumbs under resize/crop
+- Shared article-cache base: Global Config `cache_path` when set, otherwise
+  `JPATH_ROOT/cache`, so administrator and site share one generation counter
+- Access / category-assignment changes force an immediate generation bump
+- Missing generation state seeds from `time()` (no g=0 resurrection after
+  partial cache clear)
 
 ### Changed
 
-- Debug-only log when a thumb is skipped for pixel or memory headroom limits
+- Widget import capped at 200 widgets; inside-image scan bounded to 64KB HTML
 
 See `CHANGELOG.md` and `changelog.xml` for the full public history.
 

@@ -4,6 +4,32 @@
     <changelog>
         <element>pkg_devartnews</element>
         <type>package</type>
+        <version>1.2.2</version>
+
+        <fix>
+            <item>Article-cache generation, locks, and Cache API file storage use a shared cache base (Global Config cache_path when set, otherwise JPATH_ROOT/cache) so administrator and site share one generation counter</item>
+            <item>Widget metadata Cache API and mod_devartnews HTML cleans from admin use the shared cache base</item>
+            <item>Article/category Access changes (and article category reassignment) force an immediate generation bump so restricted content cannot linger during the debounce window</item>
+            <item>Missing generation state seeds from time() so clearing only the file sidecar cannot resurrect Redis/Memcached payloads under generation 0</item>
+        </fix>
+
+        <change>
+            <item>Widget import capped at 200 widgets per upload</item>
+            <item>Inside-body first-image scan bounded to the first 64KB of HTML</item>
+        </change>
+
+        <note>
+            <item>Safe update from public 1.2.1, 1.2.0, 1.1.4, and earlier 1.0.x / 1.1.x packages</item>
+            <item>Install or update using the full pkg_devartnews package only</item>
+            <item>Designed for large news portals, high traffic, and Cloudflare full-page cache</item>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+            <item>Always test on staging before production deployment</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>pkg_devartnews</element>
+        <type>package</type>
         <version>1.2.1</version>
 
         <fix>
