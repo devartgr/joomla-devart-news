@@ -5,7 +5,7 @@ magazine, news, and high-performance content websites.
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.3%2B-green)
-![Release](https://img.shields.io/badge/Version-1.2.4-orange)
+![Release](https://img.shields.io/badge/Version-1.2.5-orange)
 ![License](https://img.shields.io/badge/License-GPLv3-red)
 
 ---
@@ -152,7 +152,7 @@ This package installs:
 
 ## Installation
 
-1. Download the latest release ZIP (`pkg_devartnews_v1.2.4.zip`)
+1. Download the latest release ZIP (`pkg_devartnews_v1.2.5.zip`)
 2. Open:
 
 ```text
@@ -248,17 +248,17 @@ Not supported:
 
 ## Current Version
 
-**1.2.4**
+**1.2.5**
 
 ---
 
-## Changelog Highlights (1.2.4)
+## Changelog Highlights (1.2.5)
 
-### Fixed
+### Changed
 
-- Per-request thumbnail budget raised to 96 so multi-widget news homepages can
-  regenerate thumbs in one origin pass after a mass thumb wipe (Cloudflare FPC)
-- Local image paths are URL-decoded before filesystem checks (names with spaces)
+- Component Options: `Thumbnails per request` fixed choices **8 / 24 / 48 / 96**
+  (default **48**) so shared hosting can lower CPU after mass thumb wipes while
+  multi-widget news portals can raise to 96
 
 See `CHANGELOG.md` and `changelog.xml` for the full public history.
 
