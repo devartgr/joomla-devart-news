@@ -4,6 +4,23 @@
     <changelog>
         <element>pkg_devartnews</element>
         <type>package</type>
+        <version>1.2.4</version>
+
+        <fixes>
+            <item>Per-request thumbnail budget raised to 96 so multi-widget homepages regenerate thumbs after a mass wipe</item>
+            <item>Local image paths are URL-decoded before filesystem checks (names with spaces)</item>
+        </fixes>
+
+        <note>
+            <item>Safe update from public 1.2.3 and earlier 1.x packages</item>
+            <item>Install or update using the full pkg_devartnews package only</item>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>pkg_devartnews</element>
+        <type>package</type>
         <version>1.2.3</version>
 
         <fix>
