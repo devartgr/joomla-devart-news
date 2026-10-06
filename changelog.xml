@@ -4,6 +4,47 @@
     <changelog>
         <element>pkg_devartnews</element>
         <type>package</type>
+        <version>1.2.3</version>
+
+        <fix>
+            <item>Non-modal administrator view=articles redirects to the dashboard instead of fatalling with SQL near LIMIT</item>
+            <item>Widget metadata generation seeds from time() when durable state is missing</item>
+            <item>Article-cache generation seed uses a non-blocking lock so concurrent origin misses do not write different counters</item>
+            <item>Thumbnail memory estimate uses actual output dimensions; extreme aspect-ratio resize cannot allocate huge GD buffers</item>
+            <item>Widgets administrator list pagination so more than list.limit widgets remain reachable</item>
+            <item>Article queries omit categories under an unpublished com_content ancestor (Nested-style visibility gate)</item>
+            <item>Content plugin force-bumps on com_content category parent_id moves</item>
+            <item>Generated thumbnails apply JPEG EXIF Orientation and preserve PNG/WebP alpha for WebP output (hash version v3)</item>
+            <item>Thumbnail memory headroom is checked before GD decode (includes JPEG rotate buffer)</item>
+            <item>EXIF orientations 5 and 7 use correct GD counter-clockwise rotate angles</item>
+            <item>Article-cache absolute expiry is preserved on incomplete-thumb rehydrate so continuous hits cannot extend freshness past cache_minutes</item>
+            <item>Single-flight waiters unwrap the e/i envelope and honour absolute expiry</item>
+            <item>Expired preserveExpiresAt skips re-store so thumb work past expiry cannot open a fresh cache window</item>
+            <item>Leftover 1.2.2 root-cache .generation.json is adopted into the live tree and deleted so Clear Cache cannot resurrect a stale generation</item>
+        </fix>
+
+        <change>
+            <item>Shared article-cache base is cache_path or JPATH_CACHE (aligned with Joomla Delete all and DevArt Utils Clear Cache); 1.2.2 JPATH_ROOT/cache leftovers migrate on flush</item>
+            <item>Thumbnail locks use 64 bucket files instead of one lock per hash</item>
+            <item>Module layout uses tmpl partials; WidgetSettings exposes image/thumb accessors</item>
+            <item>Module form no longer exposes unused cache/cache_time fields; hidden cachemode=safeuri remains so ModuleRenderer skips module HTML cache when cache=1</item>
+            <item>Widget ID lists are capped at 500; import titles/aliases truncated to 255 characters</item>
+            <item>Thumbnail cleanup scans at most 250 files per hourly run and no longer deletes live .lock files</item>
+            <item>Module template uses ISO-8601 datetime, decorative empty image alt when title is also linked, and a single intro trim path</item>
+        </change>
+
+        <note>
+            <item>Safe update from public 1.2.2, 1.2.1, 1.2.0, 1.1.4, and earlier 1.0.x / 1.1.x packages</item>
+            <item>Install or update using the full pkg_devartnews package only</item>
+            <item>Designed for large news portals, high traffic, and Cloudflare full-page cache</item>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+            <item>Always test on staging before production deployment</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>pkg_devartnews</element>
+        <type>package</type>
         <version>1.2.2</version>
 
         <fix>
