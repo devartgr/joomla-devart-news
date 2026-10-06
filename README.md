@@ -5,7 +5,7 @@ magazine, news, and high-performance content websites.
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.3%2B-green)
-![Release](https://img.shields.io/badge/Version-1.2.3-orange)
+![Release](https://img.shields.io/badge/Version-1.2.4-orange)
 ![License](https://img.shields.io/badge/License-GPLv3-red)
 
 ---
@@ -152,7 +152,7 @@ This package installs:
 
 ## Installation
 
-1. Download the latest release ZIP (`pkg_devartnews_v1.2.3.zip`)
+1. Download the latest release ZIP (`pkg_devartnews_v1.2.4.zip`)
 2. Open:
 
 ```text
@@ -248,26 +248,17 @@ Not supported:
 
 ## Current Version
 
-**1.2.3**
+**1.2.4**
 
 ---
 
-## Changelog Highlights (1.2.3)
+## Changelog Highlights (1.2.4)
 
 ### Fixed
 
-- Absolute article-cache expiry so incomplete-thumb rehydrate cannot extend
-  freshness past `cache_minutes`; single-flight waiters unwrap the envelope
-- Shared cache base is `cache_path` or `JPATH_CACHE` (Joomla Delete all /
-  DevArt Utils Clear Cache); leftover 1.2.2 root-cache generation is adopted
-  then removed
-- Safer thumbnails: EXIF Orientation, PNG/WebP alpha, pre-decode memory gate
-- Category ancestor visibility; force bump on category parent moves
-- Admin: articles modal-only redirect; widgets list pagination
-
-### Changed
-
-- Thumbnail locks use 64 buckets; module tmpl partials; module form cleanup
+- Per-request thumbnail budget raised to 96 so multi-widget news homepages can
+  regenerate thumbs in one origin pass after a mass thumb wipe (Cloudflare FPC)
+- Local image paths are URL-decoded before filesystem checks (names with spaces)
 
 See `CHANGELOG.md` and `changelog.xml` for the full public history.
 
