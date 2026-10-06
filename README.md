@@ -5,7 +5,7 @@ magazine, news, and high-performance content websites.
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.3%2B-green)
-![Release](https://img.shields.io/badge/Version-1.2.2-orange)
+![Release](https://img.shields.io/badge/Version-1.2.3-orange)
 ![License](https://img.shields.io/badge/License-GPLv3-red)
 
 ---
@@ -152,7 +152,7 @@ This package installs:
 
 ## Installation
 
-1. Download the latest release ZIP (`pkg_devartnews_v1.2.2.zip`)
+1. Download the latest release ZIP (`pkg_devartnews_v1.2.3.zip`)
 2. Open:
 
 ```text
@@ -248,23 +248,26 @@ Not supported:
 
 ## Current Version
 
-**1.2.2**
+**1.2.3**
 
 ---
 
-## Changelog Highlights (1.2.2)
+## Changelog Highlights (1.2.3)
 
 ### Fixed
 
-- Shared article-cache base: Global Config `cache_path` when set, otherwise
-  `JPATH_ROOT/cache`, so administrator and site share one generation counter
-- Access / category-assignment changes force an immediate generation bump
-- Missing generation state seeds from `time()` (no g=0 resurrection after
-  partial cache clear)
+- Absolute article-cache expiry so incomplete-thumb rehydrate cannot extend
+  freshness past `cache_minutes`; single-flight waiters unwrap the envelope
+- Shared cache base is `cache_path` or `JPATH_CACHE` (Joomla Delete all /
+  DevArt Utils Clear Cache); leftover 1.2.2 root-cache generation is adopted
+  then removed
+- Safer thumbnails: EXIF Orientation, PNG/WebP alpha, pre-decode memory gate
+- Category ancestor visibility; force bump on category parent moves
+- Admin: articles modal-only redirect; widgets list pagination
 
 ### Changed
 
-- Widget import capped at 200 widgets; inside-image scan bounded to 64KB HTML
+- Thumbnail locks use 64 buckets; module tmpl partials; module form cleanup
 
 See `CHANGELOG.md` and `changelog.xml` for the full public history.
 
