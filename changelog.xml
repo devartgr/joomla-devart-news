@@ -4,6 +4,22 @@
     <changelog>
         <element>pkg_devartnews</element>
         <type>package</type>
+        <version>1.2.5</version>
+
+        <change>
+            <item>Component Options: thumbnail_max_per_request fixed choices 8/24/48/96 (default 48)</item>
+        </change>
+
+        <note>
+            <item>Safe update from public 1.2.4 and earlier 1.x packages</item>
+            <item>Install or update using the full pkg_devartnews package only</item>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>pkg_devartnews</element>
+        <type>package</type>
         <version>1.2.4</version>
 
         <fixes>
